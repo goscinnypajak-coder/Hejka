@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hej</title>
+</head>
+<body style="background:black;color:white;font-family:Arial;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center">
+
+  <div style="font-size:3em;margin-bottom:30px">hej</div>
+
+  <input id="i"
+    style="padding:10px 20px;font-size:1.2em;border:2px solid white;background:black;color:white;border-radius:5px;outline:none;margin-bottom:20px"
+    placeholder="napisz hej..."
+    autocomplete="off"
+  >
+
+  <div id="e" style="font-size:3em;margin:20px 0;display:none">☕❤️</div>
+  <div id="m" style="font-size:2em;display:none">dla ciebie</div>
+
+  <script>
+    const i = document.getElementById('i');
+    const e = document.getElementById('e');
+    const m = document.getElementById('m');
+
+    i.addEventListener('input', () => {
+      if (i.value.toLowerCase().trim() === 'hej') {
+        e.style.display = 'block';
+        m.style.display = 'block';
+      } else {
+        e.style.display = 'none';
+        m.style.display = 'none';
+      }
+    });
+
+    i.addEventListener('keydown', (t) => {
+      if (t.key === 'Enter') {
+        i.value = '';
+        e.style.display = 'none';
+        m.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
